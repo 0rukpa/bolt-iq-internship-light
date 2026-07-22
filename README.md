@@ -60,17 +60,17 @@ When I first ran my Random Forest model, my accuracy was around **46.53%**, but 
 To force the model to be objective, I added `class_weight='balanced'` to the Random Forest initialization. This hits the model with a much harsher score penalty if it messes up a down day prediction during training.
 
 ### Final Balanced Results:
-* **Directional Accuracy**: 44.55%
-* **Precision (Up Days)**: 43.06%
-* **Recall (Up Days)**: 67.39%
-* **F1 Score**: 52.54%
+* **Directional Accuracy**: 0.4741 / 47.41%
+* **Precision (Up Days)**: 0.4648 / 46.48%
+* **Recall (Up Days)**: 0.5893 / 58.93%%
+
 
 ### The Confusion Matrix:
 ```text
-[[14 41]   -> Top Row: Actual DOWN days (14 guessed right, 41 guessed wrong)
- [15 31]]  -> Bottom Row: Actual UP days (15 guessed wrong, 31 guessed right)
+[[22 38]   -> Top Row: Actual DOWN days (14 guessed right, 41 guessed wrong)
+ [23 33]]  -> Bottom Row: Actual UP days (15 guessed wrong, 31 guessed right)
 ```
-**My honest thoughts on this:** The model still falls for false alarms (41 False Positives). An accuracy under 50% on the test set is completely realistic for noisy financial data, proving there's no data leakage. If I were deploying this live, I wouldn't just take the raw 1 or 0 prediction. I'd use `predict_proba()` and tell the API to only place a trade if the model is over 60% confident.
+**My honest thoughts on this:** The model still falls for false alarms (38 False Positives). An accuracy around 50% on the test set is completely realistic for noisy financial data, proving there's no data leakage. If I were deploying this live, I wouldn't just take the raw 1 or 0 prediction. I'd use `predict_proba()` and tell the API to only place a trade if the model is over 60% confident.
 
 ---
 
