@@ -8,20 +8,19 @@ Hey! This is my project for the BoltIQ technical assessment. I built a machine l
 I kept everything organized exactly asked:
 
 ```text
+
 xauusd-classifier/
-├── data/
-│   └── fetch_data.py          # Script that downloads the raw data
-├── features/
-│   └── engineer.py           # The math for the 5 features
-├── model/
-│   ├── train.py              # Training script & temporal split
-│   └── model.pkl             # My saved model file (the brain)
-├── api/
-│   └── main.py               # The FastAPI server script
-├── notebooks/
-│   └── bolt-iq.ipynb         # My main sandbox notebook where I built everything
-├── requirements.txt          # App dependencies
-└── README.md                 # This file right here!
+├── bolt-iq/
+│   └── api                  
+       └── main.py            # The FastAPI server script
+├   └── data                  # downloaded data froom y finance
+    └── requirements.txt      # App dependencies
+├── README.md                 # This file right here!       
+├──  bolt-iq.ipynb            # My main sandbox notebook where I built everything
+│──  model.pkl                # My saved model file (the brain)   
+
+
+
 ```
 
 ---
