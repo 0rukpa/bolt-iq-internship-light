@@ -118,6 +118,6 @@ You should see a message saying: `INFO: Uvicorn running on http://127.0.0.1:8000
 ### 4. Play with the Interactive Docs
 Go to your browser and type in:
 ```text
-http://127.0.0
+http://127.0.0.1:8000/docs
 ```
 This opens up FastAPI's awesome Swagger UI interface. Click on **POST /predict**, hit **"Try it out"**, change the dummy JSON feature numbers to whatever market parameters you want, and click the blue **Execute** button. It will feed those numbers to my saved model and print out a clean prediction response (`0` or `1`) instantly!
